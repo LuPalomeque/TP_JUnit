@@ -3,6 +3,7 @@ package escenarios;
 import excepciones.ClaveYaExistenteException;
 import excepciones.DatoInvalidoException;
 import modelo.Alumno;
+import modelo.IndiceDoble;
 import modelo.Profesor;
 import modelo.Sistema;
 
@@ -13,6 +14,10 @@ public class EscenarioListaNoVacia {
 	private Profesor profesor;
 	
 	{
+		IndiceDoble<Alumno> alumnos = new IndiceDoble<Alumno>();
+		sistema.setAlumnos(alumnos);
+		IndiceDoble<Profesor> profesores = new IndiceDoble<Profesor>();
+		sistema.setProfesores(profesores);
 		try {
 			alumno = new Alumno("Juan Perez","Colon 2025","juanperez@mail.com");
 			sistema.agregarAlumno(alumno);
@@ -33,6 +38,10 @@ public class EscenarioListaNoVacia {
 	
 	public Alumno getAlumno() {
 		return alumno;
+	}
+	
+	public Profesor getProfesor() {
+		return profesor;
 	}
 
 }

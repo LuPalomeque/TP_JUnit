@@ -39,20 +39,6 @@ public class testAgregarAlumnoListaNoVacía {
 	}
 	
 	@Test
-	public void testAlumnosValidos() {
-		Alumno alumno1 = new Alumno("Juan Perez","Colon 2025","juanperez@mail.com");
-		Alumno alumno2 = new Alumno("Pedro Gutierrez","Laprida 5453","pedrogutierrez@mail.com");
-		try {
-			sistema.agregarAlumno(alumno1);
-			sistema.agregarAlumno(alumno2);
-		} catch (ClaveYaExistenteException | DatoInvalidoException e) {
-			Assert.fail("No debe tirar excepcion");
-		}
-		Assert.assertTrue("El alumno no se cargo en el sistema",sistema.getAlumnos().contieneValor(alumno1));
-		Assert.assertTrue("El alumno no se cargo en el sistema",sistema.getAlumnos().contieneValor(alumno2));
-	}
-	
-	@Test
 	public void testAlumnoRepetido() {
 		try {
 			sistema.agregarAlumno(alumno);
